@@ -3,6 +3,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require('socket.io');
+var cors = require('cors');
 const io = new Server(server, {
   cors: {
     origin: 'https://syncvideo-asvteynay-tawer.vercel.app/',
@@ -10,6 +11,7 @@ const io = new Server(server, {
     allowedHeaders: ['my-custom-header'],
   },
 });
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('<h1>Hello world</h1>');
 });
