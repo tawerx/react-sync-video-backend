@@ -5,11 +5,12 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server, {
   cors: {
-    origin: process.env.REACT_APP_API_URL,
     credentials: true,
   },
 });
-
+app.get('/', (req, res) => {
+  res.send('<h1>Hello world</h1>');
+});
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
   socket.on('currentTime', (time) => {
