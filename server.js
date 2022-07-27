@@ -7,6 +7,7 @@ const io = new Server(server, {
   cors: {
     origin: 'https://syncvideo-asvteynay-tawer.vercel.app/',
     credentials: true,
+    allowedHeaders: ['my-custom-header'],
   },
 });
 app.get('/', (req, res) => {
