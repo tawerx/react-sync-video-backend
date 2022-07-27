@@ -11,9 +11,7 @@ const io = new Server(server, {
   },
 });
 app.use(cors());
-app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>');
-});
+
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
   socket.on('currentTime', (time) => {
