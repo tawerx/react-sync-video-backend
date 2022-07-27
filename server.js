@@ -6,7 +6,7 @@ const { Server } = require('socket.io');
 var cors = require('cors');
 const io = new Server(server, {
   cors: {
-    origin: 'https://syncvideo-asvteynay-tawer.vercel.app/',
+    origin: '/',
     credentials: true,
   },
 });
